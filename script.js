@@ -1,20 +1,30 @@
-const fetchPokemon = () => {
-const promises = []; 
-for (let i = 1; i < 150; i++) {
-   const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-   promises.push(fetch(url).then((res) => res.json()));
+const baseURL = "https://pokeapi.co/api/v2/";
+
+let nextPage = "";
+let prevPage = "";
+let results = [];
+
+  const get150Pokemon = async () => {
+      try {
+        const response = await fetch(baseURL + "pokemon?limit=150");
+        return response.json();
+      } catch (error) {
+        console.error(error);
+      }
+  };
+const getNextPage = (nextPageLink) => {
+     
 }
 
-Promise.all(promises).then((results) => {
-    const pokemon = results.map((data) => ({
-        name: data.name,
-        id: data.id,
-        image: data.sprites["front_default"],
-        type: data.types.map((type) => type.type.name).join(", ")
-    }));
-    display(pokemon);
+  get150Pokemon().then((data) => {
+    console.log(data);
+    const resultsDisplay = document.getElementById("resultsDisplay");
+    const pokemon = data.results;
+    pokemon.map((item) => {
+        const card= document.createElement('div');
+        const image = document.childElement('img');
+        const name = document.createElement('h2');
+
+        card.classList.add("card")
+    })
 });
-};
-const displayPokemon = (pokemon) => {
-console.log(pokemon);
-} 
