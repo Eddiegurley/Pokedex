@@ -68,7 +68,9 @@ button:disabled {
 
 h1 {
     color: black;
-    font-family: Arial, sans-serif;
+    font-family: cursive;
+    font-size: 36pxpx;
+
 }/* Default styles for laptops and desktops */
 body {
     background-color: #f8f8f8;
