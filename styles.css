@@ -6,10 +6,10 @@
 }
 
 body {
-    background-color: rgba(30, 222, 164, 0.625);
+    background-color: white;
     text-align: center;
     font-family: Arial, sans-serif;
-    border: 10px solid rgb(248, 201, 186);
+    border: 10px solid #e63946;
 }
 
 .container {
@@ -69,4 +69,41 @@ button:disabled {
 h1 {
     color: black;
     font-family: Arial, sans-serif;
-}
+}/* Default styles for laptops and desktops */
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #e63946;
+  }
+  
+  /* Adjustments for smaller laptops (≤1366px) */
+  @media (max-width: 1366px) {
+    body {
+      background-color: #ececec;
+    }
+  
+    h1 {
+      font-size: 32px;
+    }
+  }
+  
+  /* Adjustments for larger desktops (≥1920px) */
+  @media (min-width: 1920px) {
+    body {
+      background-color: #ffffff;
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+
